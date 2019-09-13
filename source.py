@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Sep 13 11:39:06 2019
-
 @author: S.A.M.P.8
 """
 
