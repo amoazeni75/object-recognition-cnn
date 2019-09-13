@@ -41,14 +41,26 @@ num_classes = y_test.shape[1]
 
 # Create the model
 model = Sequential()
-model.add(Convolution2D(32, 3, 3, input_shape=(3, 32, 32), border_mode='same',activation='relu', W_constraint=maxnorm(3)))
+model.add(Convolution2D(32, 3, 3, input_shape=(3, 32, 32), activation= 'relu' ,
+border_mode= 'same' ))
 model.add(Dropout(0.2))
-model.add(Convolution2D(32, 3, 3, activation='relu', border_mode='same', W_constraint=maxnorm(3)))
+model.add(Convolution2D(32, 3, 3, activation= 'relu' , border_mode= 'same' ))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Convolution2D(64, 3, 3, activation= 'relu' , border_mode= 'same' ))
+model.add(Dropout(0.2))
+model.add(Convolution2D(64, 3, 3, activation= 'relu' , border_mode= 'same' ))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Convolution2D(128, 3, 3, activation= 'relu' , border_mode= 'same' ))
+model.add(Dropout(0.2))
+model.add(Convolution2D(128, 3, 3, activation= 'relu' , border_mode= 'same' ))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Flatten())
-model.add(Dense(512, activation='relu', W_constraint=maxnorm(3)))
-model.add(Dropout(0.5))
-model.add(Dense(num_classes, activation='softmax'))
+model.add(Dropout(0.2))
+model.add(Dense(1024, activation= 'relu' , W_constraint=maxnorm(3)))
+model.add(Dropout(0.2))
+model.add(Dense(512, activation= 'relu' , W_constraint=maxnorm(3)))
+model.add(Dropout(0.2))
+model.add(Dense(num_classes, activation= 'softmax' ))
 
 # Compile model
 epochs = 25
