@@ -6,3 +6,5 @@ demonstration of the capability of deep learning. A standard computer vision and
 dataset for this problem was developed by the Canadian Institute for Advanced Research
 (CIFAR)</p>
 
+<p>source : Deep Learning With Python, Develop Deep Learning Models On Theano And TensorFlow Using
+Keras, Jason Brownlee</p>
